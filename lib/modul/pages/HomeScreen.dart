@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/modul/pages/begin_way_page.dart';
 import 'package:kotovsk/modul/pages/news_page.dart';
+import 'package:kotovsk/modul/pages/warcity_page.dart';
 
 
 class HomeScreen extends StatelessWidget {
    HomeScreen({Key? key}) : super(key: key);
   final List<Widget> pages = [
     BeginWayPage(),
+    CityPage(),
     
 
   ];
