@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(), //BU Asosiy bo'lim
+      home:  HomeScreen(), //BU Asosiy bo'lim
       routes: {'/NewsPage': (context) => const NewsPage()},
     );
   }

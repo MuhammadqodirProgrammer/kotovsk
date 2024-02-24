@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kotovsk/modul/pages/begin_way_page.dart';
 import 'package:kotovsk/modul/pages/news_page.dart';
 
-void main() {
-  runApp(const HomeScreen());
-}
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);//salom
+   HomeScreen({Key? key}) : super(key: key);
+  final List<Widget> pages = [
+    BeginWayPage(),
+    
+
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                                 PageRouteBuilder(
                                   pageBuilder: (context, animation,
                                           secondaryAnimation) =>
-                                      NewsPage(),
+                                  pages[index],
                                   transitionsBuilder: (context, animation,
                                       secondaryAnimation, child) {
                                     var begin = Offset(1.0, 0.0);
