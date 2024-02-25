@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kotovsk/modul/pages/warcity_page.dart';
 import 'package:kotovsk/repositories/user_repository.dart';
 import 'package:video_player/video_player.dart';
 
@@ -161,6 +162,38 @@ class _HerospageState extends State<Herospage> {
                     ),
                   )
                 ],
+              ),
+            ),
+            Positioned(
+              top: 58,
+              right: 76,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>  CityPage(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromRGBO(219, 187, 105, 1.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10)),
+                child: Text(
+                  'назад',
+                  style: GoogleFonts.philosopher(
+                    textStyle: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ),
           ],

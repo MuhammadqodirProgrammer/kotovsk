@@ -69,6 +69,8 @@ flutter:
      - assets/images2/
      - assets/Men/
      - assets/video/
+     - assets/Warimages/
+     - assets/history/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

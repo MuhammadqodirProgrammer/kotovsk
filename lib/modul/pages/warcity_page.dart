@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/modul/pages/heros_pages.dart';
+import 'package:kotovsk/modul/pages/war_page.dart';
 import 'package:kotovsk/modul/pages/white_robe.dart';
 
 import 'HomeScreen.dart';
@@ -12,12 +13,18 @@ class CityPage  extends StatelessWidget {
   final List<Widget> pages = [
     Herospage(),
     WhiteRobePage(),
+    WarPage(),
+
 
 
   ];
-
+  final double runSpacing = 20;
+  final double spacing = 20;
+  final int listSize = 5;
+  final columns = 3;
   @override
   Widget build(BuildContext context) {
+    final w = (MediaQuery.of(context).size.width - 160 - runSpacing * (columns - 1)) / columns;
     return MaterialApp(
       home: Scaffold(
         body: Stack(
@@ -52,63 +59,39 @@ class CityPage  extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: GridView.builder(
-                        gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          crossAxisSpacing: 20.0,
-                          childAspectRatio: 1.5,
-                          mainAxisSpacing: 20.0,
-                        ),
-                        shrinkWrap: true,
-                        physics: const ClampingScrollPhysics(),
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                PageRouteBuilder(
-                                  pageBuilder: (context, animation,
-                                      secondaryAnimation) =>
-                                  pages[index],
-                                  transitionsBuilder: (context, animation,
-                                      secondaryAnimation, child) {
-                                    var begin = Offset(1.0, 0.0);
-                                    var end = Offset.zero;
-                                    var curve = Curves.ease;
 
-                                    var tween = Tween(begin: begin, end: end)
-                                        .chain(CurveTween(curve: curve));
-                                    var offsetAnimation =
-                                    animation.drive(tween);
 
-                                    return SlideTransition(
-                                      position: offsetAnimation,
-                                      child: child,
-                                    );
-                                  },
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 70),
+                    child:  Wrap(
+                      runSpacing: runSpacing,
+                      spacing: spacing,
+                      alignment: WrapAlignment.center,
+                      children: List.generate(listSize, (index) {
+                        return InkWell(
+                          onTap: (){
+                            Navigator.push(
+                                context,MaterialPageRoute(builder: (context){
+                                  return pages[index];
+                            }));
+                          },
+                        child: Container(
+                          width: w,
+                                  height: 280,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(5),
+                                    child: Image.asset(
+                                      "assets/images2/${index + 1}.png",
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
                               );
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5),
-                                child: Image.asset(
-                                  "assets/images2/${index + 1}.png",
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
+
+                      }),
                     ),
                   ),
                 ],
