@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kotovsk/modul/pages/Creat_page.dart';
+import 'package:kotovsk/modul/pages/Heading_sceen.dart';
 import 'package:kotovsk/modul/pages/HomeScreen.dart';
 import 'package:kotovsk/modul/pages/Password_Screen.dart';
+import 'package:kotovsk/modul/pages/news_page.dart';
 
 void main() {
   runApp(const EditPage());
@@ -77,7 +80,7 @@ class EditPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PasswordPage(),
+                      builder: (context) => CreatePage(),
                     ),
                   );
                 },
@@ -112,7 +115,7 @@ class EditPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
+                      builder: (context) => NewsPage(),
                     ),
                   );
                 },
@@ -205,7 +208,7 @@ class GridItem extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomeScreen(),
+                    builder: (context) => HeadingPage(),
                   ),
                 );
                 // Handle edit button tap

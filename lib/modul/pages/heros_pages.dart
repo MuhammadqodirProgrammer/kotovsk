@@ -6,7 +6,7 @@ import 'package:kotovsk/repositories/user_repository.dart';
 import 'package:video_player/video_player.dart';
 
 
-import '../../models/User_model.dart';
+
 
 
 class Herospage extends StatefulWidget {
@@ -76,6 +76,7 @@ class _HerospageState extends State<Herospage> {
                       ),
                     ),
                   ),
+
                   SingleChildScrollView(
                     child: Row(
                       children: [
@@ -126,7 +127,8 @@ class _HerospageState extends State<Herospage> {
                               children: [
                                 Text(
                                   """"${UserData[Activeindex].description}""",
-                                  style: TextStyle(
+                                  style:
+                                  TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w500,
                                     fontStyle: FontStyle.italic,
@@ -150,7 +152,7 @@ class _HerospageState extends State<Herospage> {
                             ),
 
                           ),
-                          height: 550,
+                          height: 590,
                           color: Color(0xfff6fdc7),
 
                         )
@@ -178,7 +180,9 @@ class _HerospageState extends State<Herospage> {
             _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
           ),
         ):null,
+
       ),
+
     );
   }
 }

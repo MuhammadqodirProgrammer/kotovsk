@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/modul/pages/heros_pages.dart';
+import 'package:kotovsk/modul/pages/white_robe.dart';
 
 import 'HomeScreen.dart';
 
@@ -9,7 +10,8 @@ import 'HomeScreen.dart';
 class CityPage  extends StatelessWidget {
   CityPage({Key? key}) : super(key: key);
   final List<Widget> pages = [
-    Herospage()
+    Herospage(),
+    WhiteRobePage(),
 
 
   ];
@@ -39,7 +41,7 @@ class CityPage  extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0),
                     child: Text(
-                      'Новости',
+                      'Город в годы ВОВ',
                       style: GoogleFonts.philosopher(
                         textStyle: TextStyle(
                           fontSize: 35,
