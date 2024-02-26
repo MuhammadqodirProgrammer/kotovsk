@@ -1,278 +1,278 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kotovsk/models/news_model.dart';
-import 'package:kotovsk/modul/pages/warcity_page.dart';
+import 'package:kotovsk/models/girls_model.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:kotovsk/modul/pages/carousel_page.dart';
 
-class WhiteRobePage extends StatefulWidget {
-  const WhiteRobePage ({super.key});
+final List<GirlsModel> imgList = [
+  GirlsModel(
+      name: "Медицинский персонал госпиталя",
+      imgUrl: "assets/girls/7.png"),
+  GirlsModel(
+      name: "Адамова Ирина Дмитриевнастаршая медсестра эвакогоспиталя № 1980",
+      imgUrl: "assets/girls/8.png"),
+  GirlsModel(
+      name: "Медицинский персонал госпиталя",
+      imgUrl: "assets/girls/7.png"),
+  GirlsModel(
+      name: "Адамова Ирина Дмитриевнастаршая медсестра эвакогоспиталя № 1980",
+      imgUrl: "assets/girls/8.png"),
+];
+
+class TestPage2 extends StatefulWidget {
+  const TestPage2({super.key});
 
   @override
-  State<WhiteRobePage> createState() => _HeadingPageState();
+  State<TestPage2> createState() => _TestPageState();
 }
 
-class _HeadingPageState extends State<WhiteRobePage> {
-  TextEditingController _descriptionController = TextEditingController();
-  late int newsId;
-
-  late int selectedIndex = 0;
+class _TestPageState extends State<TestPage2> {
+  final CarouselController _controller = CarouselController();
+  int _current = 0;
 
   @override
   void initState() {
     super.initState();
-    _descriptionController.text = """
-   С первых дней войны Тамбовская область становится одной из крупнейших госпитальных баз в нашей стране. 
-В городах и сёлах было развернуто 45 госпиталей. 
-
-Через госпитали Тамбовщины прошло 226 тысяч раненых солдат и офицеров. Возврат в строй раненых было около 80 %. Этот итог, которым могут гордиться тамбовские медики, был достигнут ценой огромных усилий врачей, медицинских сестёр и нянь.
-
-В городе Котовске с начала войны были размещены два военных эвакогоспиталя № 1980 во Дворце культуры и № 1393 – в школе № 1. В 1943 – 1945 годах эвакогоспиталь № 5954 во Дворце культуры и № 5901 – в школе № 1, где лечили и проходили реабилитацию солдаты с тяжёлыми ранениями. 
-
-Большую помощь медицинским работникам госпиталей оказывали предприятия и учреждения, а также население города. Жители готовили помещения для развёртывания госпиталей, разгружали эшелоны с ранеными, безвозмездно сдавали кровь, писали письма родным раненых, давали концерты в больничных палатах. Во время войны в госпиталях главными врачами работали Л.М. Ломакина, Ф.У. Повторев, главными хирургами – И.В. Щуркин, В.А. Поляков.
-    """;
-    newsId = 0; //bu joyda localstorigeda saqlangan idni berib yuborish kk va
-  }
-
-  @override
-  void dispose() {
-    _descriptionController.dispose();
-    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     // Index of the selected image
-
-    List<News> newsList = [
-      News(id: 1, title: "title", description: "description", imgs: [
-        "https://picsum.photos/id/1/200/300",
-        "https://picsum.photos/id/2/200/300",
-        "https://picsum.photos/id/3/200/300",
-        "https://picsum.photos/id/4/200/300",
-        "https://picsum.photos/id/5/200/300",
-        "https://picsum.photos/id/6/200/300",
-        "https://picsum.photos/id/7/200/300",
-        "https://picsum.photos/id/8/200/300",
-        "https://picsum.photos/id/9/200/300",
-        "https://picsum.photos/id/10/200/300",
-        "https://picsum.photos/id/11/200/300",
-        "https://picsum.photos/id/12/200/300",
-        "https://picsum.photos/id/13/200/300",
-        "https://picsum.photos/id/14/200/300",
-      ]), //network orqali
-    ];
-
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     return MaterialApp(
         home: Scaffold(
-          body: Stack(
-            children: [
-              Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/background.png'),
-                    fit: BoxFit.cover,
+        body: Stack(
+        children: [
+        Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage('assets/images/background.png'),
+    fit: BoxFit.cover,
+    ),
+    ),
+    ),
+    Padding(
+    padding: const EdgeInsets.only(left: 81.0, top: 50),
+    child: Text(
+    'Подвиг людей в белых халатах',
+    style: GoogleFonts.philosopher(
+    textStyle: const TextStyle(
+    fontSize: 35,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.italic,
+    color: Colors.white,
+    ),
+    ),
+    ),
+    ),
+    Padding(
+    padding: const EdgeInsets.only(
+    top: 135.0,
+    left: 81,
+    ),
+    child: Row(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Container(
+    width: width * 0.35,
+    height: height - 155,
+    padding: const EdgeInsets.all(30),
+    decoration: const BoxDecoration(
+    borderRadius: BorderRadius.all(Radius.circular(5)),
+    color: Color(0xFFF6FDC7),
+    ),
+    child: const SingleChildScrollView(
+    child: Text(
+    """
+  С первых дней войны Тамбовская область становится одной из крупнейших госпитальных баз в нашей стране.
+В городах и сёлах было развернуто 45 госпиталей.
+
+Через госпитали Тамбовщины прошло 226 тысяч раненых солдат и офицеров. Возврат в строй раненых было около 80 %. Этот итог, которым могут гордиться тамбовские медики, был достигнут ценой огромных усилий врачей, медицинских сестёр и нянь.
+
+В городе Котовске с начала войны были размещены два военных эвакогоспиталя № 1980 во Дворце культуры и № 1393 – в школе № 1. В 1943 – 1945 годах эвакогоспиталь № 5954 во Дворце культуры и № 5901 – в школе № 1, где лечили и проходили реабилитацию солдаты с тяжёлыми ранениями.
+
+
+Большую помощь медицинским работникам госпиталей оказывали предприятия и учреждения, а также население города. Жители готовили помещения для развёртывания госпиталей, разгружали эшелоны с ранеными, безвозмездно сдавали кровь, писали письма родным раненых, давали концерты в больничных палатах. Во время войны в госпиталях главными врачами работали Л.М. Ломакина, Ф.У. Повторев, главными хирургами – И.В. Щуркин, В.А. Поляков.""",
+    style:
+    TextStyle(fontSize: 18, color: Color(0xFF1E1E1E)),
+    ),
+    ),
+    ),
+    const SizedBox(
+    width: 55,
+    ),
+    Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Container(
+    width: (width * 0.6 - 60),
+    height: height - 185,
+    color: Colors.red,
+    child: CarouselSlider.builder(
+    options: CarouselOptions(
+    aspectRatio: 2.0,
+    // enlargeCenterPage: false,
+    autoPlay: true,
+    enableInfiniteScroll: true,
+    autoPlayInterval: const Duration(seconds: 5),
+    autoPlayAnimationDuration:
+    const Duration(milliseconds: 1200),
+    viewportFraction: 0.9,
+    enlargeCenterPage: true,
+    onPageChanged: (index, reason) {
+    setState(() {
+    _current = index;
+    });
+    },
+    ),
+    carouselController: _controller,
+    itemCount: (imgList.length / 2).round(),
+    itemBuilder: (context, index, realIdx) {
+    final int first = index * 2;
+    final int second = first + 1;
+    return Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [first, second].map((idx) {
+    return Expanded(
+    flex: 1,
+    child: Column(
+    children: [
+    Padding(
+    padding:
+    const EdgeInsets.only(left: 50),
+    child: Column(
+    children: [
+    const SizedBox(
+    height: 15,
+    ),
+    ClipRRect(
+    borderRadius:
+    const BorderRadius.all(
+    Radius.circular(8)),
+    child: Image.asset(
+    imgList[idx].imgUrl,
+    height: height * 0.65,
+    width: 500,
+    fit: BoxFit.fill,
+    ),
+    ),
+    ListTile(
+    title: Text(
+    imgList[idx].name,
+    style: const TextStyle(
+    fontSize: 16,
+
+    color: Colors.white),
+    textAlign: TextAlign.center,
+    ),
+    ),
+    ],
+    ),
+    ),
+    ],
+    ),
+    );
+    }).toList(),
+    );
+    },
+    ),
+    ),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    mainAxisSize: MainAxisSize.max,
+    children: <Widget>[
+    ...Iterable<int>.generate((imgList.length / 2).ceil())
+        .map((int pageIndex) => GestureDetector(
+    onTap: () => {
+    _controller.animateToPage(pageIndex),
+    _current = pageIndex
+    },
+    child: Container(
+    width: (width * 0.5 - 60) /
+    ((imgList.length / 2).ceil()) -
+    108,
+    height: 12.0,
+    margin: const EdgeInsets.symmetric(
+    vertical: 8.0, horizontal: 2.0),
+    decoration: BoxDecoration(
+    shape: BoxShape.rectangle,
+    color: (Theme.of(context)
+        .brightness ==
+    Brightness.dark
+    ? Colors.white
+        : Color(0xFFFEF6CC))
+        .withOpacity(_current == pageIndex
+    ? 0.9
+        : 0.4)),
+    ),
+    )),
+    SizedBox(
+    width: width * 0.1,
+    ),
+    IconButton(
+    color: Colors.grey,
+    onPressed: () => _controller.previousPage(),
+    icon: const Icon(
+    Icons.arrow_back,
+    color: Colors.white,
+    )),
+    IconButton(
+    color: Colors.grey,
+    onPressed: () => _controller.nextPage(),
+    icon: const Icon(
+    Icons.arrow_forward,
+    color: Colors.white,
+    )),
+    ],
+    ),
+    ],
+    )
+    ]),
+    ),
+
+    // header buttons
+
+
+          Positioned(
+            top: 58,
+            right: 76,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CarouselDemo(),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(219, 187, 105, 1.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  padding:
+                  const EdgeInsets.symmetric(vertical: 15, horizontal: 10)),
+              child: Text(
+                'Назад',
+                style: GoogleFonts.philosopher(
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white,
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 81.0, top: 50),
-                child: Text(
-                  'Подвиг людей в белых халатах',
-                  style: GoogleFonts.philosopher(
-                    textStyle: const TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 135.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 81),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                                child: Container(
-                                  color: Color(0xFFF6FDC7),
-                                  child: Column(children: [
-                                    TextField(
-                                      controller: _descriptionController,
-                                      onChanged: (value) {},
-                                      keyboardType: TextInputType.text,
-                                      // obscureText: true,
-
-                                      textAlign: TextAlign.left,
-                                      style: const TextStyle(color: Colors.black),
-                                      decoration: const InputDecoration(
-                                        isDense: true,
-                                        hintText: 'Описание новости',
-                                        contentPadding: EdgeInsets.all(28),
-                                        border: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDBBB69),
-                                            width: 5,
-                                          ),
-                                        ),
-                                        hintStyle: TextStyle(
-                                            fontSize: 20.0, color: Colors.black),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xFFDBBB69), width: 5),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDBBB69),
-                                            width: 5,
-                                          ),
-                                        ),
-                                      ),
-                                      textInputAction: TextInputAction.done,
-                                      maxLines: 18,
-                                    ),
-                                  ]),
-                                )),
-                            const SizedBox(
-                              width: 55,
-                            ),
-                            // ? Right expended
-                            Expanded(
-                                child: Container(
-                                  // color: Colors.orange,
-                                  child: Column(
-                                    // mainAxisAlignment: MainAxisAlignment.s,
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                                      children: [
-
-                                        Container(
-                                          height: 380,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(4.0),
-                                            ),
-                                            child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(4),
-                                              child: FadeInImage.assetNetwork(
-                                                placeholder:
-                                                "assets/images/loading.gif",
-                                                image: newsList[newsId]
-                                                    .imgs[selectedIndex],
-                                                placeholderFit: BoxFit.fill,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 34,
-                                        ),
-                                        Container(
-                                          height: 70.0,
-                                          child: ListView.builder(
-                                            scrollDirection: Axis.horizontal,
-                                            padding: EdgeInsets.symmetric(vertical: 5),
-                                            itemCount: newsList[newsId].imgs.length,
-                                            itemBuilder: (context, index) {
-                                              return GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    // Update the selected index
-                                                    selectedIndex = index;
-                                                    print(newsList[newsId]
-                                                        .imgs[selectedIndex]);
-                                                  });
-                                                },
-                                                child: Row(
-                                                  children: [
-                                                    Container(
-                                                      width: 88.0,
-                                                      height: 67.0,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                        BorderRadius.circular(4.0),
-                                                        border: Border.all(
-                                                          // color: index != selectedIndex
-                                                          //     ? Colors.blue
-                                                          //     : Colors.red,
-                                                          width: 2.0,
-                                                        ),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                        BorderRadius.circular(4),
-                                                        child: FadeInImage.assetNetwork(
-                                                          placeholder:
-                                                          'assets/images/loading.gif',
-                                                          image: newsList[newsId]
-                                                              .imgs[index],
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(width: 15),
-                                                  ],
-                                                ),
-
-                                              );
-                                            },
-                                          ),
-                                        )
-                                      ]),
-                                )),
-                          ]),
-                    ),
-                  ],
-                ),
-              ),
-
-              // header buttons
-
-              Positioned(
-                top: 58,
-                right: 76,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>  CityPage(),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(219, 187, 105, 1.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10)),
-                  child: Text(
-                    'назад',
-                    style: GoogleFonts.philosopher(
-                      textStyle: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
+        ],
+        ),
         ));
   }
 }
-

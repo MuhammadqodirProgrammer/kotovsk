@@ -12,8 +12,9 @@ final List<GirlsModel> imgList = [
   GirlsModel(name: "Сазонова Зоя Николаевна", imgUrl:"assets/girls/4.png" ),
   GirlsModel(name: "Любовь Нафанаиловна Быстрицкая (Чумичёва)", imgUrl:"assets/girls/5.png" ),
   GirlsModel(name: "Сазонова Зоя Николаевна", imgUrl:"assets/girls/6.png" ),
-  GirlsModel(name: "Любовь Нафанаиловна Быстрицкая (Чумичёва)", imgUrl:"assets/girls/7.png" ),
-  GirlsModel(name: "Сазонова Зоя Николаевна", imgUrl:"assets/girls/8.png" ),
+  GirlsModel(name: "Любовь Нафанаиловна Быстрицкая (Чумичёва)", imgUrl:"assets/girls/1.png" ),
+  GirlsModel(name: "Сазонова Зоя Николаевна", imgUrl:"assets/girls/2.png" ),
+
 
 
 ];
@@ -112,7 +113,6 @@ class _TestPageState extends State<ProtectSkyPage> {
     Container(
     width: (width * 0.6 - 60),
     height: height - 185,
-    color: Colors.red,
     child: CarouselSlider.builder(
     options: CarouselOptions(
     aspectRatio: 2.0,
@@ -150,7 +150,7 @@ class _TestPageState extends State<ProtectSkyPage> {
     borderRadius: const BorderRadius.all(Radius.circular(8)),
     child: Image.asset(
     imgList[idx].imgUrl,
-    height: 235,
+    height: 220,
     fit: BoxFit.fill,
     ),
     ),
@@ -172,7 +172,7 @@ class _TestPageState extends State<ProtectSkyPage> {
     borderRadius: const BorderRadius.all(Radius.circular(8)),
     child: Image.asset(
     imgList[idx + 1].imgUrl,
-    height: 235,
+    height: 220,
     fit: BoxFit.fill,
     ),
     ),
