@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/models/girls_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:kotovsk/modul/pages/carousel_page.dart';
+import 'package:kotovsk/modul/pages/war_page.dart';
+import 'package:kotovsk/modul/pages/warcity_page.dart';
 
 final List<GirlsModel> imgList = [
   GirlsModel(
@@ -19,14 +20,14 @@ final List<GirlsModel> imgList = [
       imgUrl: "assets/girls/8.png"),
 ];
 
-class TestPage2 extends StatefulWidget {
-  const TestPage2({super.key});
+class  WhiteRobePage extends StatefulWidget {
+  const  WhiteRobePage({super.key});
 
   @override
-  State<TestPage2> createState() => _TestPageState();
+  State< WhiteRobePage> createState() => _TestPageState();
 }
 
-class _TestPageState extends State<TestPage2> {
+class _TestPageState extends State< WhiteRobePage> {
   final CarouselController _controller = CarouselController();
   int _current = 0;
 
@@ -110,10 +111,9 @@ class _TestPageState extends State<TestPage2> {
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-    Container(
+    SizedBox(
     width: (width * 0.6 - 60),
     height: height - 185,
-    color: Colors.red,
     child: CarouselSlider.builder(
     options: CarouselOptions(
     aspectRatio: 2.0,
@@ -206,7 +206,7 @@ class _TestPageState extends State<TestPage2> {
         .brightness ==
     Brightness.dark
     ? Colors.white
-        : Color(0xFFFEF6CC))
+        : const Color(0xFFFEF6CC))
         .withOpacity(_current == pageIndex
     ? 0.9
         : 0.4)),
@@ -247,7 +247,7 @@ class _TestPageState extends State<TestPage2> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CarouselDemo(),
+                    builder: (context) => CityPage(),
                   ),
                 );
               },

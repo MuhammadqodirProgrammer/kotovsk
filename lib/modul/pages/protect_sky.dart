@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/models/girls_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kotovsk/modul/pages/war_page.dart';
+import 'package:kotovsk/modul/pages/warcity_page.dart';
 
 
 final List<GirlsModel> imgList = [
@@ -260,7 +261,7 @@ class _TestPageState extends State<ProtectSkyPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => WarPage(),
+                    builder: (context) => CityPage(),
                   ),
                 );
               },
