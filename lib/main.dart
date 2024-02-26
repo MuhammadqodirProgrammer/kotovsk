@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kotovsk/modul/pages/HomeScreen.dart';
 import 'package:kotovsk/modul/pages/news_page.dart';
-import 'package:kotovsk/modul/pages/war_page.dart';
+
 
 
 

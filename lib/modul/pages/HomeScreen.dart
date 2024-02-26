@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/modul/pages/begin_way_page.dart';
+import 'package:kotovsk/modul/pages/kotovsk_today.dart';
 import 'package:kotovsk/modul/pages/news_page.dart';
 import 'package:kotovsk/modul/pages/warcity_page.dart';
 
@@ -11,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   final List<Widget> pages = [
     BeginWayPage(),
     CityPage(),
+    KotovskTodayPage(),
 
     
 
@@ -40,14 +43,17 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0),
-                    child: Text(
-                      'Котовск',
-                      style: GoogleFonts.philosopher(
-                        textStyle: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.w700,
-                          fontStyle: FontStyle.italic,
-                          color: Colors.white,
+                    child: Animate(
+                      effects: [FadeEffect(), ScaleEffect()],
+                      child: Text(
+                        'Котовск',
+                        style: GoogleFonts.philosopher(
+                          textStyle: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),

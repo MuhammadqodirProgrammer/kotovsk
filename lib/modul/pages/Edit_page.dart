@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/modul/pages/Creat_page.dart';
 import 'package:kotovsk/modul/pages/Heading_sceen.dart';
 import 'package:kotovsk/modul/pages/HomeScreen.dart';
-import 'package:kotovsk/modul/pages/Password_Screen.dart';
 import 'package:kotovsk/modul/pages/news_page.dart';
 
 void main() {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/modul/pages/heros_pages.dart';
+import 'package:kotovsk/modul/pages/protect_sky.dart';
 import 'package:kotovsk/modul/pages/war_page.dart';
 import 'package:kotovsk/modul/pages/white_robe.dart';
 
@@ -13,6 +14,7 @@ class CityPage  extends StatelessWidget {
   final List<Widget> pages = [
     Herospage(),
     WhiteRobePage(),
+    ProtectSkyPage(),
     WarPage(),
 
 
