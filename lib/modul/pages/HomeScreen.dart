@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kotovsk/modul/pages/Memory.dart';
 import 'package:kotovsk/modul/pages/begin_way_page.dart';
 import 'package:kotovsk/modul/pages/kotovsk_today.dart';
 import 'package:kotovsk/modul/pages/news_page.dart';
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
     BeginWayPage(),
     CityPage(),
     KotovskTodayPage(),
+    HistoryScreen(),
 
     
 
