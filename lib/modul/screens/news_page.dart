@@ -1,25 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kotovsk/modul/pages/Memory.dart';
-import 'package:kotovsk/modul/pages/begin_way_page.dart';
-import 'package:kotovsk/modul/pages/kotovsk_today.dart';
-import 'package:kotovsk/modul/pages/news_page.dart';
-import 'package:kotovsk/modul/pages/warcity_page.dart';
+import 'package:kotovsk/modul/screens/HomeScreen.dart';
+import 'package:kotovsk/modul/screens/Password_Screen.dart';
 
-
-
-class HomeScreen extends StatelessWidget {
-   HomeScreen({Key? key}) : super(key: key);
-  final List<Widget> pages = [
-    BeginWayPage(),
-    CityPage(),
-    KotovskTodayPage(),
-    HistoryScreen(),
-
-    
-
-  ];
+class NewsPage extends StatelessWidget {
+  const NewsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,17 +30,14 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0),
-                    child: Animate(
-                      effects: [FadeEffect(), ScaleEffect()],
-                      child: Text(
-                        'Котовск',
-                        style: GoogleFonts.philosopher(
-                          textStyle: TextStyle(
-                            fontSize: 35,
-                            fontWeight: FontWeight.w700,
-                            fontStyle: FontStyle.italic,
-                            color: Colors.white,
-                          ),
+                    child: Text(
+                      'Новости',
+                      style: GoogleFonts.philosopher(
+                        textStyle: TextStyle(
+                          fontSize: 35,
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -73,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         shrinkWrap: true,
                         physics: const ClampingScrollPhysics(),
-                        itemCount: 6,
+                        itemCount: 9,
                         itemBuilder: (context, index) {
                           return GestureDetector(
                             onTap: () {
@@ -82,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                                 PageRouteBuilder(
                                   pageBuilder: (context, animation,
                                           secondaryAnimation) =>
-                                  pages[index],
+                                      HomeScreen(),
                                   transitionsBuilder: (context, animation,
                                       secondaryAnimation, child) {
                                     var begin = Offset(1.0, 0.0);
@@ -103,9 +85,15 @@ class HomeScreen extends StatelessWidget {
                               );
                             },
                             child: Container(
-                              child: Image.asset(
-                                "assets/images/${index + 1}.png",
-                                fit: BoxFit.cover,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(5),
+                                child: Image.asset(
+                                  "assets/images/${index + 1}.png",
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           );
@@ -118,13 +106,13 @@ class HomeScreen extends StatelessWidget {
             ),
             Positioned(
               top: 58,
-              right: 20,
+              right: 150,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => NewsPage(),
+                      builder: (context) => PasswordPage(),
                     ),
                   );
                 },
@@ -132,7 +120,35 @@ class HomeScreen extends StatelessWidget {
                   backgroundColor: Color.fromRGBO(219, 187, 105, 1.0),
                 ),
                 child: Text(
-                  'Новости',
+                  'Добавить',
+                  style: GoogleFonts.philosopher(
+                    textStyle: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 58,
+              right: 20,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromRGBO(219, 187, 105, 1.0),
+                ),
+                child: Text(
+                  'назад',
                   style: GoogleFonts.philosopher(
                     textStyle: TextStyle(
                       fontSize: 20,

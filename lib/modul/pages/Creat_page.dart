@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kotovsk/modul/pages/Heading_sceen.dart';
+import 'package:kotovsk/modul/screens/Heading_sceen.dart';
 
 
 class CreatePage extends StatefulWidget {

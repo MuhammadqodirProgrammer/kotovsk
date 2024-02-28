@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/modul/pages/Creat_page.dart';
-import 'package:kotovsk/modul/pages/Heading_sceen.dart';
-import 'package:kotovsk/modul/pages/HomeScreen.dart';
-import 'package:kotovsk/modul/pages/news_page.dart';
+import 'package:kotovsk/modul/screens/Heading_sceen.dart';
+import 'package:kotovsk/modul/screens/news_page.dart';
+import 'package:kotovsk/screen.dart';
 
-void main() {
-  runApp(const EditPage());
+
+class EditPage extends StatefulWidget {
+  const EditPage({Key? key}) : super(key: key);
+
+  @override
+  State<EditPage> createState() => _EditPageState();
 }
 
-class EditPage extends StatelessWidget {
-  const EditPage({Key? key}) : super(key: key);
+class _EditPageState extends State<EditPage> {
+
+  @override
+  void initState() {
+    super.initState();
+   if(true) {
+     mainControler.currentState?.goToPage(1);
+
+   }
+  }
+
+
+
+
+
 
   @override
   Widget build(BuildContext context) {

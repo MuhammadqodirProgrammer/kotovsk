@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/modul/pages/Culture.dart';
-import 'package:kotovsk/modul/pages/HomeScreen.dart';
+import 'package:kotovsk/modul/screens/HomeScreen.dart';
 import 'package:kotovsk/modul/pages/Sport.dart';
 
 class KotovskTodayPage extends StatelessWidget {

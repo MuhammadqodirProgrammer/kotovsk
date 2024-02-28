@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kotovsk/modul/pages/HomeScreen.dart';
-import 'package:kotovsk/modul/pages/news_page.dart';
-
-
-
+import 'package:kotovsk/routes.dart';
+import 'package:turn_page_transition/turn_page_transition.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,14 +11,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final routes = Routes.routes();
+
+    return MaterialApp.router(
+      routerConfig: routes,
+      title: 'TurnPageTransition Example',
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
+        pageTransitionsTheme: const TurnPageTransitionsTheme(
+          overleafColor: Colors.grey,
+          animationTransitionPoint: 0.5,
+        ),
         primarySwatch: Colors.blue,
       ),
-      home:  HomeScreen(), //BU Asosiy bo'lim
-      routes: {'/NewsPage': (context) => const NewsPage()},
+      // routeInformationParser: routes.routeInformationParser,
+      // routerDelegate: routes.routerDelegate,
     );
   }
 }

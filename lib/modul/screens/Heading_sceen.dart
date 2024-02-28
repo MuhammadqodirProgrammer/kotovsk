@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotovsk/models/news_model.dart';
-import 'package:kotovsk/modul/pages/Edit_page.dart';
+import 'package:kotovsk/modul/screens/Edit_page.dart';
 
 class HeadingPage extends StatefulWidget {
   const HeadingPage({super.key});

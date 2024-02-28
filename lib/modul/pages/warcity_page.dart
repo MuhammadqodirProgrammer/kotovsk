@@ -6,7 +6,7 @@ import 'package:kotovsk/modul/pages/protect_sky.dart';
 import 'package:kotovsk/modul/pages/war_page.dart';
 import 'package:kotovsk/modul/pages/white_robe.dart';
 
-import 'HomeScreen.dart';
+import '../screens/HomeScreen.dart';
 
 
 
